@@ -2,6 +2,7 @@ package hyu_memento.memento_back.service;
 
 import hyu_memento.memento_back.domain.Member;
 import hyu_memento.memento_back.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class MemberService {
 
-    @Autowired
-    MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     /* 회원가입 */
     @Transactional // 변경
