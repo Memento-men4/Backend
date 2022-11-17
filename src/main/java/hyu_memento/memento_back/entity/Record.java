@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -20,12 +21,12 @@ public class Record {
     @JoinColumn(name="member_seq")
     private Member member;
 
-    private String dateTime;
+    private LocalDateTime dateTime;
     private String location;
     private String content;
 
     @Builder
-    public Record(Member member, String dateTime, String location, String content) {
+    public Record(Member member, LocalDateTime dateTime, String location, String content) {
         this.member = member;
         member.getRecords().add(this);
         this.dateTime = dateTime;

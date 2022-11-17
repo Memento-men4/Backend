@@ -9,7 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity()
@@ -29,7 +31,8 @@ public class Member {
     private Gender gender;
     @Enumerated(EnumType.STRING)
     private MemberType type;
-    private String birtyDay;
+
+    private LocalDate birthDay;
     private String email;
 
     @OneToMany(mappedBy = "member")
@@ -46,14 +49,14 @@ public class Member {
 
 
     @Builder
-    public Member(Long id, String password, String name, String phoneNumber, Gender gender, MemberType type, String birtyDay, String email) {
+    public Member(Long id, String password, String name, String phoneNumber, Gender gender, MemberType type, LocalDate birthDay, String email) {
         this.id = id;
         this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
         this.type = type;
-        this.birtyDay = birtyDay;
+        this.birthDay = birthDay;
         this.email = email;
     }
 

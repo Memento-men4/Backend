@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,10 +36,10 @@ public class Appliance {
     @Enumerated(EnumType.STRING)
     private ApplianceStatus status;
 
-    private String settingTime;
+    private LocalTime settingTime;
 
     @Builder
-    public Appliance(Member member, ApplianceType type, ApplianceStatus status, String settingTime) {
+    public Appliance(Member member, ApplianceType type, ApplianceStatus status, LocalTime settingTime) {
         this.member = member;
         member.getAppliances().add(this);
         this.type = type;

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,14 +28,15 @@ public class Quiz {
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<QuizContent> quizContents = new ArrayList<>();
 
-    private String datetime;
+    private LocalDate date;
+
     private int result;
 
     @Builder
-    public Quiz(Member member, String datetime) {
+    public Quiz(Member member, LocalDate date) {
         this.member = member;
         member.getQuizs().add(this);
-        this.datetime = datetime;
+        this.date = date;
     }
 
     //==연관관계 메서드==//

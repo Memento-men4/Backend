@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table
@@ -25,16 +27,17 @@ public class GamePlay {
     @Enumerated(EnumType.STRING)
     private GameType type;
 
-    private String datetime;
-
+    private LocalDate date;
+    private LocalTime time;
     private int result;
 
     @Builder
-    public GamePlay(Member member, GameType type, String datetime, int result) {
+    public GamePlay(Member member, GameType type, LocalDate date, LocalTime time, int result) {
         this.member = member;
         member.getGamePlays().add(this);
         this.type = type;
-        this.datetime = datetime;
+        this.date = date;
+        this.time = time;
         this.result = result;
     }
 

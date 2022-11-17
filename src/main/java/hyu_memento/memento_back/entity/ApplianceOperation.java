@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table
@@ -22,11 +24,11 @@ public class ApplianceOperation {
     @JoinColumn(name="appliance_seq")
     private Appliance appliance;
 
-    private String date;
-    private String time;
+    private LocalDate date;
+    private LocalTime time;
 
     @Builder
-    public ApplianceOperation(String date, String time) {
+    public ApplianceOperation(LocalDate date, LocalTime time) {
         this.date = date;
         this.time = time;
     }
