@@ -1,4 +1,4 @@
-package hyu_memento.memento_back.entity;
+package hyu_memento.memento_back.domain;
 
 import lombok.Builder;
 import lombok.Getter;

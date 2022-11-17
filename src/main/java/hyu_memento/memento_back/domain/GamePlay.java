@@ -1,7 +1,6 @@
-package hyu_memento.memento_back.entity;
+package hyu_memento.memento_back.domain;
 
-import hyu_memento.memento_back.entity.type.GameType;
-import hyu_memento.memento_back.entity.type.GameType;
+import hyu_memento.memento_back.domain.type.GameType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

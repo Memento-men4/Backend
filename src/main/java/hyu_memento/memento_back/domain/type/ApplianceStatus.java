@@ -1,4 +1,4 @@
-package hyu_memento.memento_back.entity.type;
+package hyu_memento.memento_back.domain.type;
 
 public enum ApplianceStatus {
     RUN, STOP, ERROR

@@ -1,9 +1,7 @@
-package hyu_memento.memento_back.entity;
+package hyu_memento.memento_back.domain;
 
-import hyu_memento.memento_back.entity.type.ApplianceStatus;
-import hyu_memento.memento_back.entity.type.ApplianceType;
-import hyu_memento.memento_back.entity.type.ApplianceStatus;
-import hyu_memento.memento_back.entity.type.ApplianceType;
+import hyu_memento.memento_back.domain.type.ApplianceStatus;
+import hyu_memento.memento_back.domain.type.ApplianceType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

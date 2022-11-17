@@ -1,9 +1,7 @@
-package hyu_memento.memento_back.entity;
+package hyu_memento.memento_back.domain;
 
-import hyu_memento.memento_back.entity.type.Gender;
-import hyu_memento.memento_back.entity.type.MemberType;
-import hyu_memento.memento_back.entity.type.Gender;
-import hyu_memento.memento_back.entity.type.MemberType;
+import hyu_memento.memento_back.domain.type.Gender;
+import hyu_memento.memento_back.domain.type.MemberType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +9,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity()
