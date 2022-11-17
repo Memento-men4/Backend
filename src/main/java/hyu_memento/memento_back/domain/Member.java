@@ -20,7 +20,7 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long member_seq;
 
-    private Long id; // unique 제약 조건?
+    private String id; // unique 제약 조건?
     private String password;
     private String name;
     private String phoneNumber;
@@ -46,7 +46,7 @@ public class Member {
 
 
     @Builder
-    public Member(Long id, String password, String name, String phoneNumber, Gender gender, MemberType type, LocalDate birthDay, String email) {
+    public Member(String id, String password, String name, String phoneNumber, Gender gender, MemberType type, LocalDate birthDay, String email) {
         this.id = id;
         this.password = password;
         this.name = name;

@@ -36,13 +36,13 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    /* member_seq로 회원 조회 */
+    /* member_seq(PK)로 회원 조회 */
     public Member findOne(Long member_seq) {
         return memberRepository.findOne(member_seq);
     }
 
     /* id로 회원 조회 */
-    public List<Member> findById(Long id) {
+    public List<Member> findById(String id) {
         return memberRepository.findById(id);
     }
 }
