@@ -20,7 +20,7 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long member_seq;
 
-    private Long id;
+    private Long id; // unique 제약 조건?
     private String password;
     private String name;
     private String phoneNumber;
