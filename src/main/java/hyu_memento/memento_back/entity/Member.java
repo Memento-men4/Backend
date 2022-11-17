@@ -1,7 +1,9 @@
 package hyu_memento.memento_back.entity;
 
-import hyu_memento.memento_back.type.Gender;
-import hyu_memento.memento_back.type.MemberType;
+import hyu_memento.memento_back.entity.type.Gender;
+import hyu_memento.memento_back.entity.type.MemberType;
+import hyu_memento.memento_back.entity.type.Gender;
+import hyu_memento.memento_back.entity.type.MemberType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

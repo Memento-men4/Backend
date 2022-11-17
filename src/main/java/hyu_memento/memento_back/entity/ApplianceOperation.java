@@ -14,7 +14,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class ApplianceOperation {
     @Id
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "applianceOperation_seq")
     private Long seq;
