@@ -25,6 +25,11 @@ public class GameplayService {
         return gamePlay.getSeq();
     }
 
+    /* seq(PK)로 조회 */
+    public GamePlay findOne(Long seq) {
+        return gameplayRepository.findOne(seq);
+    }
+
     /* (개인별) 모든 게임 기록 조회 */
     public List<GamePlay> findAllGamePlay(Member member) {
         return gameplayRepository.findAll(member.getMember_seq());
