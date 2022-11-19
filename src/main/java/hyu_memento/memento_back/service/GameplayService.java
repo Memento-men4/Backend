@@ -26,7 +26,7 @@ public class GameplayService {
     }
 
     /* (개인별) 모든 게임 기록 조회 */
-    public List<GamePlay> findAllRecords(Member member) {
+    public List<GamePlay> findAllGamePlay(Member member) {
         return gameplayRepository.findAll(member.getMember_seq());
     }
 
