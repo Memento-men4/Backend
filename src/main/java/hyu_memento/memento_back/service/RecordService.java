@@ -1,5 +1,6 @@
 package hyu_memento.memento_back.service;
 
+import hyu_memento.memento_back.domain.Member;
 import hyu_memento.memento_back.domain.Record;
 import hyu_memento.memento_back.repository.RecordRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +23,9 @@ public class RecordService {
         recordRepository.save(record);
         return record.getSeq();
     }
-    
+
     /* 날짜별 녹음 조회 */
-    public List<Record> findDayRecords(LocalDate date) {
-        return recordRepository.findByDate(date);
+    public List<Record> findDayRecords(LocalDate date, Member member) {
+        return recordRepository.findByDate(date, member.getMember_seq());
     }
 }
