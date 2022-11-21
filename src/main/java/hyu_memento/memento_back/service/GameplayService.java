@@ -20,9 +20,8 @@ public class GameplayService {
 
     /* 게임기록생성 */
     @Transactional
-    public Long createGamePlay(GamePlay gamePlay) {
-        gameplayRepository.save(gamePlay);
-        return gamePlay.getSeq();
+    public Long saveGamePlay(GamePlay gamePlay) {
+        return gameplayRepository.save(gamePlay);
     }
 
     /* seq(PK)로 조회 */
@@ -31,17 +30,17 @@ public class GameplayService {
     }
 
     /* (개인별) 모든 게임 기록 조회 */
-    public List<GamePlay> findAllGamePlay(Member member) {
-        return gameplayRepository.findAll(member.getMember_seq());
+    public List<GamePlay> findAllGamePlay(Long member_seq) {
+        return gameplayRepository.findAll(member_seq);
     }
 
     /* (개인별) 날짜별 게임 기록 조회 */
-    public List<GamePlay> findDayGamePlay(LocalDate date, Member member) {
-        return gameplayRepository.findByDate(date, member.getMember_seq());
+    public List<GamePlay> findDayGamePlay(LocalDate date, Long member_seq) {
+        return gameplayRepository.findByDate(date, member_seq);
     }
 
     /* (개인별) 종류별 게임 기록 조회 */
-    public List<GamePlay> findTypeGamePlay(GameType type, Member member) {
-        return gameplayRepository.findByType(type, member.getMember_seq());
+    public List<GamePlay> findTypeGamePlay(GameType type,Long member_seq) {
+        return gameplayRepository.findByType(type, member_seq);
     }
 }
