@@ -20,8 +20,7 @@ public class MemberService {
     @Transactional // 변경
     public Long join(Member member) {
         validateDuplicateMember(member); // 중복 회원 검증
-        memberRepository.save(member);
-        return member.getMember_seq();
+        return memberRepository.save(member);
     }
 
     private void validateDuplicateMember(Member member) {
