@@ -35,7 +35,7 @@ public class RecordController {
     }
 
     /* 녹음 날짜별 조회 */
-    @GetMapping("/record")
+    @GetMapping("/record/date")
     public List<RecordReturnDto> dailyRecord(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, @RequestParam Long member_seq) {
         List<Record> findRecords = recordService.findDayRecords(date, member_seq);
         List<RecordReturnDto> returnRecords = new ArrayList<>();
