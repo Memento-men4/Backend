@@ -1,6 +1,5 @@
 package hyu_memento.memento_back.service;
 
-import hyu_memento.memento_back.domain.Member;
 import hyu_memento.memento_back.domain.Record;
 import hyu_memento.memento_back.repository.RecordRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,13 +18,12 @@ public class RecordService {
 
     /* 녹음생성 */
     @Transactional
-    public Long createRecord(Record record) {
-        recordRepository.save(record);
-        return record.getSeq();
+    public Long saveRecord(Record record) {
+        return recordRepository.save(record);
     }
 
     /* 날짜별 녹음 조회 */
-    public List<Record> findDayRecords(LocalDate date, Member member) {
-        return recordRepository.findByDate(date, member.getMember_seq());
+    public List<Record> findDayRecords(LocalDate date, Long member_seq) {
+        return recordRepository.findByDate(date, member_seq);
     }
 }
