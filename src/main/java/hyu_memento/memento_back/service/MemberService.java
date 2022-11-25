@@ -1,5 +1,6 @@
 package hyu_memento.memento_back.service;
 
+import hyu_memento.memento_back.controller.dto.MemberDto;
 import hyu_memento.memento_back.domain.Member;
 import hyu_memento.memento_back.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,8 @@ public class MemberService {
 
     /* 회원가입 */
     @Transactional // 변경
-    public Long join(Member member) {
+    public Long join(MemberDto memberDto) {
+        Member member = memberDto.toEntity();
         validateDuplicateMember(member); // 중복 회원 검증
         return memberRepository.save(member);
     }

@@ -1,5 +1,6 @@
 package hyu_memento.memento_back.controller.dto;
 
+import hyu_memento.memento_back.domain.Member;
 import hyu_memento.memento_back.domain.type.Gender;
 import hyu_memento.memento_back.domain.type.MemberType;
 import lombok.Builder;
@@ -32,5 +33,18 @@ public class MemberDto {
         this.type = type;
         this.birthDay = birthDay;
         this.email = email;
+    }
+
+    public Member toEntity() {
+        return Member.builder()
+                .id(id)
+                .password(password)
+                .name(name)
+                .phoneNumber(phoneNumber)
+                .gender(gender)
+                .type(type)
+                .birthDay(birthDay)
+                .email(email)
+                .build();
     }
 }

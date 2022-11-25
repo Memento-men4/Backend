@@ -13,18 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberController {
     public final MemberService memberService;
 
+    /* 회원 생성 */
     @PostMapping("/member")
     public Long save(@RequestBody MemberDto memberDto) {
-        Member member = Member.builder()
-                .id(memberDto.getId())
-                .password(memberDto.getPassword())
-                .name(memberDto.getName())
-                .phoneNumber(memberDto.getPhoneNumber())
-                .gender(memberDto.getGender())
-                .type(memberDto.getType())
-                .birthDay(memberDto.getBirthDay())
-                .email(memberDto.getEmail())
-                .build();
-        return memberService.join(member);
+        return memberService.join(memberDto);
     }
 }
