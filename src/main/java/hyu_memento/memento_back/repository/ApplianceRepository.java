@@ -1,6 +1,7 @@
 package hyu_memento.memento_back.repository;
 
 import hyu_memento.memento_back.domain.Appliance;
+import hyu_memento.memento_back.domain.ApplianceOperation;
 import hyu_memento.memento_back.domain.GamePlay;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -71,5 +72,7 @@ public class ApplianceRepository {
         return null;
     }
 
-
+    public Appliance findOne(Long seq) {
+        return em.find(Appliance.class, seq);
+    }
 }

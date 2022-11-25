@@ -20,7 +20,7 @@ public class ApplianceOperationRepository {
 
     public Long save(ApplianceOperation op) {
         em.persist(op);
-        return op.getId();
+        return op.getSeq();
     }
 
     public ApplianceOperation findOne(Long seq) {

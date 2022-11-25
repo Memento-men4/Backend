@@ -19,73 +19,23 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class ApplianceController {
-    public final MemberService memberService;
     public final ApplianceService applianceService;
 
     /* 가전 생성 */
     @PostMapping("/appliance")
     public Long save(@RequestBody ApplianceSaveDto applianceSaveDto) {
-        Appliance appliance = Appliance.builder()
-                .member(memberService.findOne(applianceSaveDto.getMember_seq()))
-                .serialNum(applianceSaveDto.getSerialNum())
-                .type(applianceSaveDto.getType())
-                .settingTime(applianceSaveDto.getSettingTime())
-                .mon(applianceSaveDto.getMon())
-                .tue(applianceSaveDto.getTue())
-                .wed(applianceSaveDto.getWed())
-                .thr(applianceSaveDto.getThr())
-                .fri(applianceSaveDto.getFri())
-                .sat(applianceSaveDto.getSat())
-                .sun(applianceSaveDto.getSun())
-                .build();
-        return applianceService.saveAppliance(appliance);
+        return applianceService.saveAppliance(applianceSaveDto);
     }
 
     /* 가전 조회 */
     @GetMapping("/appliance")
-    public List<ApplianceReturnDto> findAll(@RequestParam Long member_seq) {
-        List<Appliance> findAppliances = applianceService.findAll(member_seq);
-        List<ApplianceReturnDto> returnAppliances = new ArrayList<>();
-        for (Appliance appliance : findAppliances) {
-            ApplianceReturnDto returnAppliance = ApplianceReturnDto.builder()
-                    .appliance_seq(appliance.getSeq())
-                    .serialNum(appliance.getSerialNum())
-                    .type(appliance.getType())
-                    .settingTime(appliance.getSettingTime())
-                    .mon(appliance.getMon())
-                    .tue(appliance.getTue())
-                    .wed(appliance.getWed())
-                    .thr(appliance.getThr())
-                    .fri(appliance.getFri())
-                    .sat(appliance.getSat())
-                    .sun(appliance.getSun())
-                    .build();
-            returnAppliances.add(returnAppliance);
-        }
-        return returnAppliances;
+    public List<ApplianceReturnDto> allApp(@RequestParam Long member_seq) {
+        return applianceService.findAllApp(member_seq);
     }
 
     /* 가전 날짜별 조회 */
     @GetMapping("/appliance/date")
-    public List<ApplianceReturnDto> findByDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, @RequestParam Long member_seq) {
-        List<Appliance> findAppliances = applianceService.findDate(date, member_seq);
-        List<ApplianceReturnDto> returnAppliances = new ArrayList<>();
-        for (Appliance appliance : findAppliances) {
-            ApplianceReturnDto returnAppliance = ApplianceReturnDto.builder()
-                    .appliance_seq(appliance.getSeq())
-                    .serialNum(appliance.getSerialNum())
-                    .type(appliance.getType())
-                    .settingTime(appliance.getSettingTime())
-                    .mon(appliance.getMon())
-                    .tue(appliance.getTue())
-                    .wed(appliance.getWed())
-                    .thr(appliance.getThr())
-                    .fri(appliance.getFri())
-                    .sat(appliance.getSat())
-                    .sun(appliance.getSun())
-                    .build();
-            returnAppliances.add(returnAppliance);
-        }
-        return returnAppliances;
+    public List<ApplianceReturnDto> DateApp(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, @RequestParam Long member_seq) {
+        return applianceService.findDateApp(date, member_seq);
     }
 }
