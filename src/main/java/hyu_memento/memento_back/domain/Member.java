@@ -44,6 +44,8 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Appliance> appliances = new ArrayList<>();
 
+    @OneToMany(mappedBy = "member")
+    private List<ApplianceOperation> applianceOperations = new ArrayList<>();
 
     @Builder
     public Member(String id, String password, String name, String phoneNumber, Gender gender, MemberType type, LocalDate birthDay, String email) {

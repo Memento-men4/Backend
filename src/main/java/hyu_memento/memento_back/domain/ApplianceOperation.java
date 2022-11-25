@@ -24,11 +24,18 @@ public class ApplianceOperation {
     @JoinColumn(name="appliance_seq")
     private Appliance appliance;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="member_seq")
+    private Member member;
     private LocalDate date;
     private LocalTime time;
 
     @Builder
-    public ApplianceOperation(LocalDate date, LocalTime time) {
+    public ApplianceOperation(Member member, Appliance appliance, LocalDate date, LocalTime time) {
+        this.member = member;
+        member.getApplianceOperations().add(this);
+        this.appliance = appliance;
+        appliance.getApplianceOperations().add(this);
         this.date = date;
         this.time = time;
     }
