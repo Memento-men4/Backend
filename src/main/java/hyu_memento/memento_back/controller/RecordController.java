@@ -17,36 +17,17 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class RecordController {
-
-    public final MemberService memberService;
     public final RecordService recordService;
 
     /* 녹음 생성 */
     @PostMapping("/record")
     public Long save(@RequestBody RecordSaveDto recordSaveDto) {
-        Record record = Record.builder()
-                .member(memberService.findOne(recordSaveDto.getMember_seq()))
-                .date(LocalDate.now())
-                .time(LocalTime.now())
-                .location(recordSaveDto.getLocation())
-                .content(recordSaveDto.getContent())
-                .build();
-        return recordService.saveRecord(record);
+        return recordService.saveRecord(recordSaveDto);
     }
 
     /* 녹음 날짜별 조회 */
     @GetMapping("/record/date")
     public List<RecordReturnDto> dailyRecord(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, @RequestParam Long member_seq) {
-        List<Record> findRecords = recordService.findDayRecords(date, member_seq);
-        List<RecordReturnDto> returnRecords = new ArrayList<>();
-        for (Record record : findRecords) {
-            RecordReturnDto returnRecord = RecordReturnDto.builder()
-                    .time(record.getTime())
-                    .location(record.getLocation())
-                    .content(record.getContent())
-                    .build();
-            returnRecords.add(returnRecord);
-        }
-        return returnRecords;
+        return recordService.findDayRecords(date, member_seq);
     }
 }

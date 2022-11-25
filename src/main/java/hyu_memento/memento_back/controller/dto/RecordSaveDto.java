@@ -1,8 +1,12 @@
 package hyu_memento.memento_back.controller.dto;
 
+import hyu_memento.memento_back.domain.Record;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Getter
 @NoArgsConstructor
