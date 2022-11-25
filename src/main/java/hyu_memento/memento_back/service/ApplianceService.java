@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -18,14 +19,18 @@ public class ApplianceService {
 
     /* 가전 생성 */
     @Transactional
-    public Long createAppliance(Appliance appliance) {
-        applianceRepository.save(appliance);
-        return appliance.getSeq();
+    public Long saveAppliance(Appliance appliance) {
+        return applianceRepository.save(appliance);
     }
 
     /* 가전 조회 */
-    public List<Appliance> findAll(Member member) {
-        return applianceRepository.findAll(member.getMember_seq());
+    public List<Appliance> findAll(Long member_seq) {
+        return applianceRepository.findAll(member_seq);
+    }
+
+    /* 가전 날짜별 조회 (추천용) */
+    public List<Appliance> findDate(LocalDate date, Long member_seq) {
+        return applianceRepository.findByDate(date, member_seq);
     }
 
 }

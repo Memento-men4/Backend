@@ -18,8 +18,9 @@ public class GameplayRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public void save(GamePlay gamePlay) {
+    public Long save(GamePlay gamePlay) {
         em.persist(gamePlay);
+        return gamePlay.getSeq();
     }
 
     public GamePlay findOne(Long seq) {
