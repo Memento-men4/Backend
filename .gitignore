@@ -1,2 +1,5 @@
 .gradle
 .idea
+
+main/resources/application-dev.yml
+test/resources/application-dev.yml
