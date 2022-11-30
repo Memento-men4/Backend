@@ -29,8 +29,6 @@ public class Quiz {
 
     private LocalDate date;
 
-    private int result;
-
     @Builder
     public Quiz(Member member, LocalDate date) {
         this.member = member;
@@ -48,6 +46,4 @@ public class Quiz {
         quizContents.add(quizContent);
         quizContent.setQuiz(this);
     }
-
-    // TODO : result 계산해서 넣어주는 method
 }

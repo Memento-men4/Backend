@@ -21,18 +21,14 @@ public class QuizContent {
     @JoinColumn(name="quiz_seq")
     private Quiz quiz;
 
-    private int num;
+    private Integer num;
     private String content;
-    private boolean ans;
-    private boolean userAns;
-    private boolean result;
+    private String ans;
 
     @Builder
-    public QuizContent(int num, String content, boolean ans, boolean userAns, boolean result) {
+    public QuizContent(Integer num, String content, String ans) {
         this.num = num;
         this.content = content;
         this.ans = ans;
-        this.userAns = userAns;
-        this.result = result;
     }
 }
