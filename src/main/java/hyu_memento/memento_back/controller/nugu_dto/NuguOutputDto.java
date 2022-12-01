@@ -9,10 +9,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class NuguOutputDto {
+    private String date;
+    private String member_seq;
     private String quiz_content;
 
     @Builder
-    public NuguOutputDto(String quiz_content) {
+    public NuguOutputDto(String date, String member_seq, String quiz_content) {
+        this.date = date;
+        this.member_seq = member_seq;
         this.quiz_content = quiz_content;
     }
 }
