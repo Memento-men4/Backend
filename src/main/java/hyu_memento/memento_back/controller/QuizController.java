@@ -1,16 +1,14 @@
 package hyu_memento.memento_back.controller;
 
-import com.mysql.cj.xdevapi.JsonParser;
 import hyu_memento.memento_back.controller.dto.QuizDto;
 import hyu_memento.memento_back.service.QuizService;
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.json.JSONParser;
 import org.json.JSONObject;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.HashMap;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 @RequiredArgsConstructor
@@ -31,10 +29,14 @@ public class QuizController {
         JSONObject jsonObj = new JSONObject(nugu);
         JSONObject action = jsonObj.getJSONObject("action");
         JSONObject parameters = action.getJSONObject("parameters");
-        System.out.println(parameters.get("seq"));
-        System.out.println(parameters.get("member_seq"));
-        System.out.println(parameters.get("date"));
-//        QuizDto quizContent = quizService.findQuizContent(date, seq, member_seq);
-//        return quizContent.getContent();
+        JSONObject seq = parameters.getJSONObject("seq");
+        JSONObject jmember_seq = parameters.getJSONObject("member_seq");
+        JSONObject jdate = parameters.getJSONObject("date");
+
+        LocalDate date = LocalDate.parse((String) jdate.get("value"), DateTimeFormatter.ISO_DATE);
+        Long quiz_seq = Long.valueOf(String.valueOf(seq.get("value")));
+        Long member_seq = Long.valueOf(String.valueOf(jmember_seq.get("value")));
+        QuizDto quizContent = quizService.findQuizContent(date, quiz_seq, member_seq);
+        return quizContent.getContent();
     }
 }
