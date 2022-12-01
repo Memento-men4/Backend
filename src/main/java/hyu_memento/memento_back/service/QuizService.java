@@ -22,13 +22,14 @@ public class QuizService {
 
     /* 퀴즈 생성 */
     @Transactional
-    public Long createQuiz(LocalDate date) {
-        Quiz quiz = new Quiz(memberRepository.findOne(1L), date);
-        for (Long i=1L; i<=10; i++) {
+    public Long createQuiz(LocalDate date, Long member_seq) {
+        Quiz quiz = new Quiz(memberRepository.findOne(member_seq), date);
+        // TODO : csv읽어와서 qc 설정
+        for (Long i = 1L; i <= 10; i++) {
             QuizContent qc = QuizContent.builder()
                     .num(i)
-                    .content("내용")
-                    .ans("답변")
+                    .content("내용" + String.valueOf(i) + "(member_seq : "+String.valueOf(member_seq)+")")
+                    .ans("답변" + String.valueOf(i))
                     .build();
             quiz.addQuizContent(qc);
         }
@@ -36,8 +37,8 @@ public class QuizService {
     }
 
     /* 퀴즈 조회*/
-    public QuizDto findQuizContent(LocalDate date, Long seq) {
-        QuizContent quizCon = quizRepository.findQuizCon(date, seq);
+    public QuizDto findQuizContent(LocalDate date, Long seq, Long member_seq) {
+        QuizContent quizCon = quizRepository.findQuizCon(date, seq, member_seq);
         QuizDto quizdto = QuizDto.builder()
                 .num(quizCon.getNum())
                 .content(quizCon.getContent())

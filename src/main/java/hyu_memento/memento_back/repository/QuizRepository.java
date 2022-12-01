@@ -1,6 +1,5 @@
 package hyu_memento.memento_back.repository;
 
-import hyu_memento.memento_back.domain.GamePlay;
 import hyu_memento.memento_back.domain.Quiz;
 import hyu_memento.memento_back.domain.QuizContent;
 import lombok.RequiredArgsConstructor;
@@ -40,10 +39,11 @@ public class QuizRepository {
                 .getSingleResult();
     }
 
-    public QuizContent findQuizCon(LocalDate date, Long seq) {
-        return em.createQuery("select c from QuizContent c join c.quiz q where q.date=:date and c.num=:seq", QuizContent.class)
+    public QuizContent findQuizCon(LocalDate date, Long seq, Long member_seq) {
+        return em.createQuery("select c from QuizContent c join c.quiz q join q.member m where q.date=:date and c.num=:seq and m.member_seq = :member_seq", QuizContent.class)
                 .setParameter("date", date)
                 .setParameter("seq", seq)
+                .setParameter("member_seq", member_seq)
                 .getSingleResult();
     }
 }
