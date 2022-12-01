@@ -1,6 +1,5 @@
 package hyu_memento.memento_back.controller.dto;
 
-import hyu_memento.memento_back.domain.type.ApplianceDayStatus;
 import hyu_memento.memento_back.domain.type.ApplianceType;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,16 +15,16 @@ public class ApplianceSaveDto {
     private String serialNum;
     private ApplianceType type;
     private LocalTime settingTime;
-    private ApplianceDayStatus mon;
-    private ApplianceDayStatus tue;
-    private ApplianceDayStatus wed;
-    private ApplianceDayStatus thr;
-    private ApplianceDayStatus fri;
-    private ApplianceDayStatus sat;
-    private ApplianceDayStatus sun;
+    private Boolean mon;
+    private Boolean tue;
+    private Boolean wed;
+    private Boolean thr;
+    private Boolean fri;
+    private Boolean sat;
+    private Boolean sun;
 
     @Builder
-    public ApplianceSaveDto(Long member_seq, String serialNum, ApplianceType type, LocalTime settingTime, ApplianceDayStatus mon, ApplianceDayStatus tue, ApplianceDayStatus wed, ApplianceDayStatus thr, ApplianceDayStatus fri, ApplianceDayStatus sat, ApplianceDayStatus sun) {
+    public ApplianceSaveDto(Long member_seq, String serialNum, ApplianceType type, LocalTime settingTime, Boolean mon, Boolean tue, Boolean wed, Boolean thr, Boolean fri, Boolean sat, Boolean sun) {
         this.member_seq = member_seq;
         this.serialNum = serialNum;
         this.type = type;

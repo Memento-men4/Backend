@@ -21,15 +21,7 @@ public class MemberService {
     @Transactional // 변경
     public Long join(MemberDto memberDto) {
         Member member = memberDto.toEntity();
-        validateDuplicateMember(member); // 중복 회원 검증
         return memberRepository.save(member);
-    }
-
-    private void validateDuplicateMember(Member member) {
-        List<Member> findMembers = findById(member.getId());
-        if (!findMembers.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 회원입니다");
-        }
     }
 
     /* 전체 회원 조회 */

@@ -1,6 +1,5 @@
 package hyu_memento.memento_back.domain;
 
-import hyu_memento.memento_back.domain.type.ApplianceDayStatus;
 import hyu_memento.memento_back.domain.type.ApplianceType;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,33 +30,18 @@ public class Appliance {
     private String serialNum;
     @Enumerated(EnumType.STRING)
     private ApplianceType type;
-
     private LocalTime settingTime;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus mon;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus tue;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus wed;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus thr;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus fri;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus sat;
-
-    @Enumerated(EnumType.STRING)
-    private ApplianceDayStatus sun;
+    private Boolean mon;
+    private Boolean tue;
+    private Boolean wed;
+    private Boolean thr;
+    private Boolean fri;
+    private Boolean sat;
+    private Boolean sun;
 
 
     @Builder
-    public Appliance(Member member, String serialNum, ApplianceType type, LocalTime settingTime, ApplianceDayStatus mon, ApplianceDayStatus tue, ApplianceDayStatus wed, ApplianceDayStatus thr, ApplianceDayStatus fri, ApplianceDayStatus sat, ApplianceDayStatus sun) {
+    public Appliance(Member member, String serialNum, ApplianceType type, LocalTime settingTime, Boolean mon, Boolean tue, Boolean wed, Boolean thr, Boolean fri, Boolean sat, Boolean sun) {
         this.member = member;
         member.getAppliances().add(this);
         this.serialNum = serialNum;

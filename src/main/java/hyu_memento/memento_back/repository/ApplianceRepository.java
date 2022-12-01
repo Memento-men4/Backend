@@ -41,31 +41,31 @@ public class ApplianceRepository {
         int dayOfWeekNumber = date.getDayOfWeek().getValue();
 
         if (dayOfWeekNumber == 1) {
-            return em.createQuery("select a from Appliance a join a.member m where a.mon = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.mon = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         } else if (dayOfWeekNumber == 2) {
-            return em.createQuery("select a from Appliance a join a.member m where a.tue = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.tue = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         } else if (dayOfWeekNumber == 3) {
-            return em.createQuery("select a from Appliance a join a.member m where a.wed = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.wed = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         } else if (dayOfWeekNumber == 4) {
-            return em.createQuery("select a from Appliance a join a.member m where a.thr = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.thr = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         } else if (dayOfWeekNumber == 5) {
-            return em.createQuery("select a from Appliance a join a.member m where a.fri = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.fri = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         } else if (dayOfWeekNumber==6) {
-            return em.createQuery("select a from Appliance a join a.member m where a.sat = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.sat = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         } else if (dayOfWeekNumber==7) {
-            return em.createQuery("select a from Appliance a join a.member m where a.sun = 'ON' and m.member_seq = :member_seq", Appliance.class)
+            return em.createQuery("select a from Appliance a join a.member m where a.sun = TRUE and m.member_seq = :member_seq", Appliance.class)
                     .setParameter("member_seq", member_seq)
                     .getResultList();
         }
