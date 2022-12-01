@@ -21,12 +21,12 @@ public class QuizContent {
     @JoinColumn(name="quiz_seq")
     private Quiz quiz;
 
-    private Integer num;
+    private Long num;
     private String content;
     private String ans;
 
     @Builder
-    public QuizContent(Integer num, String content, String ans) {
+    public QuizContent(Long num, String content, String ans) {
         this.num = num;
         this.content = content;
         this.ans = ans;
