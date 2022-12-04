@@ -11,13 +11,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class RecordReturnDto {
     private LocalTime time;
-    private String location;
-    private String content;
+    private String title;
+    private String description;
 
     @Builder
-    public RecordReturnDto(LocalTime time, String location, String content) {
+    public RecordReturnDto(LocalTime time, String title, String description) {
         this.time = time;
-        this.location = location;
-        this.content = content;
+        this.title = title;
+        this.description = description;
     }
 }

@@ -41,8 +41,8 @@ public class RecordService {
         for (Record record : findRecords) {
             RecordReturnDto returnRecord = RecordReturnDto.builder()
                     .time(record.getTime())
-                    .location(record.getLocation())
-                    .content(record.getContent())
+                    .title(record.getLocation())
+                    .description(record.getContent())
                     .build();
             returnRecords.add(returnRecord);
         }
