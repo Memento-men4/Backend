@@ -28,8 +28,8 @@ public class RecordService {
                 .member(memberService.findOne(recordSaveDto.getMember_seq()))
                 .date(LocalDate.now())
                 .time(LocalTime.now())
-                .location(recordSaveDto.getLocation())
-                .content(recordSaveDto.getContent())
+                .location(recordSaveDto.getTitle())
+                .content(recordSaveDto.getDescription())
                 .build();
         return recordRepository.save(record);
     }

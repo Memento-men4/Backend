@@ -12,13 +12,13 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class RecordSaveDto {
     private Long member_seq;
-    private String location;
-    private String content;
+    private String title;
+    private String description;
 
     @Builder
-    public RecordSaveDto(Long member_seq, String location, String content) {
+    public RecordSaveDto(Long member_seq, String title, String description) {
         this.member_seq = member_seq;
-        this.location = location;
-        this.content = content;
+        this.title = title;
+        this.description = description;
     }
 }
