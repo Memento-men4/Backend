@@ -23,12 +23,10 @@ public class QuizContent {
 
     private Long num;
     private String content;
-    private String ans;
 
     @Builder
     public QuizContent(Long num, String content, String ans) {
         this.num = num;
         this.content = content;
-        this.ans = ans;
     }
 }
