@@ -1,62 +1,18 @@
-# 🧠 MEMENTO <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" />
+# 🧠 MEMENTO
+This is Memento's Backend.
+> About Memento > https://github.com/Memento-men4  
+> Watch Demo video > https://www.youtube.com/watch?v=7lxRL_99KnQ  
 
-![MEMENTO_DESIGN](https://user-images.githubusercontent.com/90544907/207660887-19171e0d-c754-4fa0-9e8c-63aa8960cd90.png)
+### 🖇 Architecture Design
+<img width="489" alt="백엔드아키텍처" src="https://user-images.githubusercontent.com/91522259/207849988-2bc60dcf-9f8e-4987-8724-c1ddae513d67.png">  
 
-## 🛠 Project Setup
+### 📁 Api Documentation
+https://mixolydian-bird-90f.notion.site/16d6b37979ca46029b6f70a95378af6e?v=30cc5aa83b01428b8a2dce91c4e82654  
 
-Server should be running before running the app.
+### 📝 Tech Blog
+https://velog.io/@hanueleee/series/HYUSE  
 
-```
-$ npm install
-$ cd ios
-$ pod install (or npx pod-install)
-$ npm start react-native run-ios (or npx react-native run-ios)
-```
-
-## 📦 Packages
-
-    "@react-native-async-storage/async-storage": "^1.17.11",
-    "@react-native-community/datetimepicker": "^6.7.0",
-    "@react-native-community/geolocation": "^3.0.3",
-    "@react-native-community/masked-view": "^0.1.11",
-    "@react-navigation/bottom-tabs": "^6.4.0",
-    "@react-navigation/drawer": "^6.5.0",
-    "@react-navigation/native": "^6.0.13",
-    "@react-navigation/native-stack": "^6.9.1",
-    "axios": "^1.2.0",
-    "date-fns": "^2.29.3",
-    "expo": "~46.0.16",
-    "expo-app-loading": "~2.1.0",
-    "expo-asset": "~8.6.1",
-    "expo-calendar": "~10.3.0",
-    "expo-cli": "^6.0.6",
-    "expo-font": "~10.2.0",
-    "expo-splash-screen": "~0.16.2",
-    "expo-status-bar": "~1.4.0",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "react-native": "0.69.6",
-    "react-native-bouncy-checkbox": "^3.0.6",
-    "react-native-calendars": "^1.1291.0",
-    "react-native-gesture-handler": "^2.8.0",
-    "react-native-highlight-underline-text": "^1.0.4",
-    "react-native-modal-datetime-picker": "^14.0.0",
-    "react-native-reanimated": "^2.12.0",
-    "react-native-safe-area-context": "^4.4.1",
-    "react-native-screens": "~3.15.0",
-    "react-native-splash-screen": "^3.3.0",
-    "react-native-timeline-flatlist": "^0.8.0",
-    "react-native-voice": "^0.3.0",
-    "react-native-web": "~0.18.7",
-    "recoil": "^0.7.6",
-    "styled-components": "^5.3.6"
-
-## 🔥 Contributors 🔥
-
-- 🇰🇷 [이하늘](https://github.com/hanueleee)
-- 🇰🇷 [정세희](https://github.com/sehee-jeong)
-- 🇰🇷 [조준상](https://github.com/wnstkd0622)
-
-## 🔗 Related Repositories
-
-- [Memento](https://github.com/Memento-men4)
+### 🛠 Stacks
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
