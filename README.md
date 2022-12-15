@@ -1,44 +1,62 @@
-# Memento 
-**Quiz-based 영츠하이머 (Young+Alzheimer) 예방 비서**
-**인공지능 스피커, LG가전 제어, with 👣 MeMento**
----
+# 🧠 MEMENTO <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" />
 
-## 소개
-젊음을 의미하는 ‘young’과 알츠하이머의 ‘Alzheimer’를 합친 ‘Youngzheimer(영츠하이머)를 겪는 사람들이 급증함에 따라,
-사용자 일상에 기반한 데이터로 치매를 예방할 수 있는 다양한 기능을 제공하는 
-영츠하이머 예방 user-friendly 어플리케이션 **👣 MeMento**입니다.
+![MEMENTO_DESIGN](https://user-images.githubusercontent.com/90544907/207660887-19171e0d-c754-4fa0-9e8c-63aa8960cd90.png)
 
-## Demo 영상
-https://www.youtube.com/watch?v=3gTepVrgRB0
+## 🛠 Project Setup
 
-## 핵심 기능
-### **#REAL-TIME RECORDING**
-**whenever, wherever 길을 걸으며 녹음 가능**
-녹음 버튼 누르는 즉시, 현 위치와 시간이 함께 기록됩니다.
-사용자 녹음 예시 ) 우와 오늘 날씨 엄청 좋네. 지금 석철이 만나러 가는 중.
+Server should be running before running the app.
 
-### **#DAILY QUIZ**
-**녹음 데이터 기반으로 daily 퀴즈**
-- **날짜** 기반 질문: 밥을 먹었다 지나가다가 세희를 만났다를 어떤 날짜에 말했나요?
-- **시간** 기반 질문: 밥을 먹었다 지나가다가 세희를 만났다를 말한 시간은 몇 시인가요?
-- **위치** 기반 질문: 밥을 먹었다 지나가다가 세희를 만났다를 말한 장소는 어디인가요?
-- **행동** 기반 질문: 2022년 10월 21일 10시 22분에 김부삼에서 무엇을 했나요?
-- **인물** 기반 질문: 2022년 10월 21일 10시 22분에 김부삼에서 누구와 함께 행동했나요?
-- **대화** 기반 질문: 2022년 10월 21일 10시 22분에 김부삼에서 한 말은 무엇인가요?
+```
+$ npm install
+$ cd ios
+$ pod install (or npx pod-install)
+$ npm start react-native run-ios (or npx react-native run-ios)
+```
 
-### **#LG CONTROL**
-**LG가전을 제어해야 하는 시간을 타임라인에 설정 가능**
-1. LG가전을 시리얼 넘버를 통해 초기 등록한 후 제어해야 하는 시간을 설정 
-2. 해당 시간 Daily 타임라인에 **회색**으로 표시됨
-3. LG가전 작동 완료 시 타임라인에 **검정색**으로 표시됨
+## 📦 Packages
 
-### **#GAME**
-**STT 기반 어플리케이션 내 치매예방 게임 제공**
-- 집중력 향상 게임: (**빨강, 노랑, 파랑)** 올바르게 읽기
-- 기억력 향상 게임: 단어를 사용자에게 보여주고 해당하는 단어와 관련된 종류를 고르는 게임
-    (Ex: 바나나 → 과일, 동물, 식물)
-- 계산 능력 향상 게임: 간단한 사칙연산 문제 (덧셈 뺄셈 암산, 100에서 7빼기 등)
+    "@react-native-async-storage/async-storage": "^1.17.11",
+    "@react-native-community/datetimepicker": "^6.7.0",
+    "@react-native-community/geolocation": "^3.0.3",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-navigation/bottom-tabs": "^6.4.0",
+    "@react-navigation/drawer": "^6.5.0",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.1",
+    "axios": "^1.2.0",
+    "date-fns": "^2.29.3",
+    "expo": "~46.0.16",
+    "expo-app-loading": "~2.1.0",
+    "expo-asset": "~8.6.1",
+    "expo-calendar": "~10.3.0",
+    "expo-cli": "^6.0.6",
+    "expo-font": "~10.2.0",
+    "expo-splash-screen": "~0.16.2",
+    "expo-status-bar": "~1.4.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-bouncy-checkbox": "^3.0.6",
+    "react-native-calendars": "^1.1291.0",
+    "react-native-gesture-handler": "^2.8.0",
+    "react-native-highlight-underline-text": "^1.0.4",
+    "react-native-modal-datetime-picker": "^14.0.0",
+    "react-native-reanimated": "^2.12.0",
+    "react-native-safe-area-context": "^4.4.1",
+    "react-native-screens": "~3.15.0",
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-timeline-flatlist": "^0.8.0",
+    "react-native-voice": "^0.3.0",
+    "react-native-web": "~0.18.7",
+    "recoil": "^0.7.6",
+    "styled-components": "^5.3.6"
 
-### **#OTHERS**
-- **영츠하이머 자가 진단**
-- **영츠하이머 관련 정보**
+## 🔥 Contributors 🔥
+
+- 🇰🇷 [이하늘](https://github.com/hanueleee)
+- 🇰🇷 [정세희](https://github.com/sehee-jeong)
+- 🇰🇷 [조준상](https://github.com/wnstkd0622)
+
+## 🔗 Related Repositories
+
+- [Memento](https://github.com/Memento-men4)
